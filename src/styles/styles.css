@@ -1,0 +1,146 @@
+body {
+    background-color: rgb(14, 68, 50);
+    background-image: url(../images/background.jpg);
+    background-attachment: fixed;
+
+}
+
+.container{
+    margin-bottom: 5%;
+}
+
+.content div {
+    position: absolute;
+    z-index: 10;
+    top:50%;
+    left:50%;
+    transform:translateY(-50%) translateX(-50%);
+    opacity: 0;
+    -webkit-transition: opacity .5s ease-in-out;
+    -moz-transition: opacity .5s ease-in-out;
+    -o-transition: opacity .5s ease-in-out;
+    transition: opacity .5s ease-in-out;
+    
+}
+
+#header {
+    background-image: url(../images/clouds-bg.jpg);
+    background-repeat: no-repeat;
+    padding: 0;
+    margin-top: 5%;
+}
+
+#header img {
+    display: block;
+    margin: auto;
+}
+
+.heading{
+    font-family: 'Shrikhand', cursive;
+    margin-right: 20%;
+    text-align: right;
+}
+.content:hover div{
+    opacity: .80;
+}
+
+.spin {
+    -webkit-animation:rotate 3s linear infinite;
+    -moz-animation:rotate 3s linear infinite;
+    animation:rotate 3s linear infinite;
+}
+
+img {
+    -webkit-transition: opacity .5s ease-in-out;
+    -moz-transition: opacity .5s ease-in-out;
+    -o-transition: opacity .5s ease-in-out;
+    transition: opacity .5s ease-in-out;
+}
+.content:hover .counterfade {
+    box-sizing: border-box;
+    opacity: .3;
+}
+
+.content {
+    background-image: url(../images/grass.png);
+    cursor: pointer;
+}
+
+.section {
+    width: inherit;
+    padding: 0;
+}
+/* Modal Styles */
+
+.custom-modal {
+    transition: transform 400ms ease-in;  
+}
+
+.custom-modal {
+    position: relative;
+    margin: 10% auto auto auto;
+    width: 95%;
+    height: auto;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 0 10px 3px rgba(0,0,0,0.1);
+    overflow-y: auto;
+   
+}
+
+.show {
+    display: block;
+}
+
+.modal-cover {
+    position: fixed;
+    top: 0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    z-index: 250;
+    transform: translateZ(0);
+    background-color: rgba(0, 0, 0, 0.747);
+}
+
+#profile-pic{
+    width: 500px;
+    margin-bottom:20px;
+}
+
+#profile-pic img {
+    display:block;
+    margin:auto;
+}
+
+#info-panel h7{
+    display: block;
+}
+
+.modal-header {
+    margin-bottom:10px;
+}
+
+@media screen and (min-width: 500px) {
+    .custom-modal{
+        max-width: 60em;
+        max-height: calc(100%- 1em);
+        animation-name: slide-down;
+    }
+}
+
+.fade-down{
+    animation-duration: .3s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes slide-down {
+    0% {transform: translate3d(0,-100%,0);animation-timing-function: ease-in; opacity: 0;}
+    100% {transform: none;opacity:1;}
+}
+
+@keyframes rotate {
+    100%{transform : rotate(360deg);}
+}
+@-moz-keyframes rotate { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes rotate { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes rotate { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
